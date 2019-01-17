@@ -1,0 +1,162 @@
+<!--To display people details-->
+<div *ngIf="category === 'people'">
+    <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">  
+       <mat-card>
+          <mat-card-title>{{people_detail.name}}</mat-card-title>
+          <mat-card-subtitle>People</mat-card-subtitle>
+          <img mat-card-image [src]="people_detail.imgURL"  onerror="this.src='assets/images/404.jpg'">
+          <mat-card-content>
+             <B>BirthYear:</B> <div style="display: inline; margin: 25px;">{{people_detail. birth_year}}</div><br/>
+             <B>Height:</B> <div style="display: inline; margin: 25px;">{{people_detail.height}}</div><br/>
+             <B>Species:</B> <div *ngFor="let c of people_detail.species" style="display: inline;margin: 25px;">{{c}}</div><br/>
+             <B>Mass:</B><div style="display: inline; margin: 25px;">{{people_detail.mass}}</div><br/>
+             <B>Gender:</B><div style="display: inline; margin: 25px;">{{people_detail.gender}}</div><br/>
+             <B>HairColor:</B><div style="display: inline; margin: 25px;">{{people_detail.hair_color}}</div><br/>
+             <B>SkinColor:</B><div style="display: inline; margin: 25px;">{{people_detail.skin_color}}</div><br/>
+             <B>HomeWorld:</B><div style="display: inline; margin: 25px;">{{people_detail.homeworld}}</div><br/>
+          </mat-card-content>
+          <mat-card-actions>
+             <button type="button" color="accent" mat-mini-fab (click)="goBack()"> <mat-icon>keyboard_arrow_left</mat-icon></button>
+              <div fxFlex></div>
+             <button type="button" color="accent" mat-mini-fab (click)="goBack()"> <mat-icon>favorite</mat-icon></button>
+          </mat-card-actions>
+        </mat-card>
+    </div>
+</div>
+
+<!-- To display film details-->
+<div *ngIf="category === 'films'">
+  <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center" max-width="25%">  
+     <mat-card>
+        <mat-card-title>{{film_detail.title}}</mat-card-title>
+        <mat-card-subtitle>Film</mat-card-subtitle>
+        <img mat-card-image [src]="film_detail.imgURL"  onerror="this.src='assets/images/404.jpg'">
+        <mat-card-content>
+          <B>Opening Crawl:</B> <div style="display: inline; margin: 25px;">{{film_detail.opening_crawl}}</div><br/>
+          <B>Episode Id:</B> <div style="display: inline; margin: 25px;">{{film_detail. episode_id}}</div><br/>
+          <B>Director:</B> <div style="display: inline;margin: 25px;">{{film_detail.director}}</div><br/>
+          <B>Producer:</B><div style="display: inline; margin: 25px;">{{film_detail.producer}}</div><br/>
+          <B>Release Date:</B><div style="display: inline; margin: 25px;">{{film_detail.release_date}}</div><br/>
+          <B>Characters:</B><div *ngFor="let c of film_detail.characters" style="display: inline; margin: 25px;" >{{c}}</div><br/>
+          <B>Planets:</B><div *ngFor="let c of film_detail.planets" style="display: inline; margin: 25px;">{{c}}</div><br/>
+          <B>Species:</B><div *ngFor="let c of film_detail.species" style="display: inline; margin: 25px;">{{c}}</div><br/>
+        </mat-card-content>
+        <mat-card-actions>
+           <button type="button" color="accent" mat-mini-fab (click)="goBack()"> <mat-icon>keyboard_arrow_left</mat-icon></button>
+            <div fxFlex></div>
+           <button type="button" color="accent" mat-mini-fab (click)="goBack()"> <mat-icon>favorite</mat-icon></button>
+        </mat-card-actions>
+      </mat-card>
+  </div>
+</div>
+
+    <!-- To display starship details-->
+    <div *ngIf="category === 'starships'">
+      <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center" max-width="25%">  
+         <mat-card>
+            <mat-card-title>{{starship_detail.name}}</mat-card-title>
+            <mat-card-subtitle>Starship</mat-card-subtitle>
+            <img mat-card-image [src]="starship_detail.imgURL"  onerror="this.src='assets/images/404.jpg'">
+            <mat-card-content>
+              <B>Model:</B> <div style="display: inline; margin: 25px;">{{starship_detail.model}}</div><br/>
+              <B>Starship Class:</B> <div style="display: inline; margin: 25px;">{{starship_detail. starship_class}}</div><br/>
+              <B>Cost (in Credits):</B> <div style="display: inline;margin: 25px;">{{starship_detail.cost_in_credits}}</div><br/>
+              <B>Length:</B><div style="display: inline; margin: 25px;">{{starship_detail.length}}</div><br/>
+              <B>Crew:</B><div style="display: inline; margin: 25px;">{{starship_detail.crew}}</div><br/>
+              <B>Passengers:</B><div style="display: inline; margin: 25px;" >{{starship_detail.passengers}}</div><br/>
+              <B>Max Atmosphering Speed:</B><div style="display: inline; margin: 25px;">{{starship_detail.max_atmosphering_speed}}</div><br/>
+              <B>Hyperdrive Rating:</B><div style="display: inline; margin: 25px;">{{starship_detail.hyperdrive_rating}}</div><br/>
+              <B>Megalights travel/hour:</B><div style="display: inline; margin: 25px;" >{{starship_detail.MGLT}}</div><br/>
+              <B>Cargo Capacity:</B><div style="display: inline; margin: 25px;">{{starship_detail.cargo_capacity}}</div><br/>
+              <B>Pilots:</B><div *ngFor="let c of starship_detail.pilots" style="display: inline; margin: 25px;">{{c}}</div><br/>
+            </mat-card-content>
+            <mat-card-actions>
+               <button type="button" color="accent" mat-mini-fab (click)="goBack()"> <mat-icon>keyboard_arrow_left</mat-icon></button>
+                <div fxFlex></div>
+               <button type="button" color="accent" mat-mini-fab (click)="goBack()"> <mat-icon>favorite</mat-icon></button>
+            </mat-card-actions>
+          </mat-card>
+      </div>
+    </div>
+
+    <!-- To display vehicle details-->
+    <div *ngIf="category === 'vehicles'">
+      <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center" max-width="25%">  
+         <mat-card>
+            <mat-card-title>{{vehicle_detail.name}}</mat-card-title>
+            <mat-card-subtitle>Vehicle</mat-card-subtitle>
+            <img mat-card-image [src]="vehicle_detail.imgURL"  onerror="this.src='assets/images/404.jpg'">
+            <mat-card-content>
+              <B>Model:</B> <div style="display: inline; margin: 25px;">{{vehicle_detail.model}}</div><br/>
+              <B>Starship Class:</B> <div style="display: inline; margin: 25px;">{{vehicle_detail. vehicle_class}}</div><br/>
+              <B>Cost (in Credits):</B> <div style="display: inline;margin: 25px;">{{vehicle_detail.cost_in_credits}}</div><br/>
+              <B>Length:</B><div style="display: inline; margin: 25px;">{{vehicle_detail.length}}</div><br/>
+              <B>Crew:</B><div style="display: inline; margin: 25px;">{{vehicle_detail.crew}}</div><br/>
+              <B>Passengers:</B><div style="display: inline; margin: 25px;" >{{vehicle_detail.passengers}}</div><br/>
+              <B>Max Atmosphering Speed:</B><div style="display: inline; margin: 25px;">{{vehicle_detail.max_atmosphering_speed}}</div><br/>
+              <B>Manufacturer:</B><div style="display: inline; margin: 25px;">{{vehicle_detail.manufacturer}}</div><br/>
+              <B>Consumables:</B><div style="display: inline; margin: 25px;">{{vehicle_detail.consumables}}</div><br/>
+              <B>Cargo Capacity:</B><div style="display: inline; margin: 25px;">{{vehicle_detail.cargo_capacity}}</div><br/>
+              <B>Pilots:</B><div *ngFor="let c of vehicle_detail.pilots" style="display: inline; margin: 25px;">{{c}}</div><br/>
+            </mat-card-content>
+            <mat-card-actions>
+               <button type="button" color="accent" mat-mini-fab (click)="goBack()"> <mat-icon>keyboard_arrow_left</mat-icon></button>
+                <div fxFlex></div>
+               <button type="button" color="accent" mat-mini-fab (click)="goBack()"> <mat-icon>favorite</mat-icon></button>
+            </mat-card-actions>
+          </mat-card>
+      </div>
+    </div>
+
+    <!-- To display planet details-->
+    <div *ngIf="category === 'planets'">
+      <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center" max-width="25%">  
+         <mat-card>
+            <mat-card-title>{{planet_detail.name}}</mat-card-title>
+            <mat-card-subtitle>Planet</mat-card-subtitle>
+            <img mat-card-image [src]="planet_detail.imgURL"  onerror="this.src='assets/images/404.jpg'">
+            <mat-card-content>
+              <B>Diameter:</B> <div style="display: inline; margin: 25px;">{{planet_detail.diameter}}</div><br/>
+              <B>Rotation Period:</B> <div style="display: inline; margin: 25px;">{{planet_detail. rotation_period}}</div><br/>
+              <B>Orbital Period:</B> <div style="display: inline;margin: 25px;">{{planet_detail.orbital_period}}</div><br/>
+              <B>Gravity:</B><div style="display: inline; margin: 25px;">{{planet_detail.gravity}}</div><br/>
+              <B>Population:</B><div style="display: inline; margin: 25px;">{{planet_detail.population}}</div><br/>
+              <B>Climate:</B><div style="display: inline; margin: 25px;" >{{planet_detail.climate}}</div><br/>
+              <B>Terrain:</B><div style="display: inline; margin: 25px;">{{planet_detail.terrain}}</div><br/>
+              <B>Surface Water:</B><div style="display: inline; margin: 25px;">{{planet_detail.surface_water}}</div><br/>
+            </mat-card-content>
+            <mat-card-actions>
+               <button type="button" color="accent" mat-mini-fab (click)="goBack()"> <mat-icon>keyboard_arrow_left</mat-icon></button>
+                <div fxFlex></div>
+               <button type="button" color="accent" mat-mini-fab (click)="goBack()"> <mat-icon>favorite</mat-icon></button>
+            </mat-card-actions>
+          </mat-card>
+      </div>
+    </div>
+  
+    <!-- To display species details-->
+    <div *ngIf="category === 'species'">
+        <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center" max-width="25%">  
+           <mat-card>
+              <mat-card-title>{{species_detail.name}}</mat-card-title>
+              <mat-card-subtitle>Species</mat-card-subtitle>
+              <img mat-card-image [src]="species_detail.imgURL"  onerror="this.src='assets/images/404.jpg'">
+              <mat-card-content>
+                <B>Classification:</B> <div style="display: inline; margin: 25px;">{{species_detail.classification}}</div><br/>
+                <B>Designation:</B> <div style="display: inline; margin: 25px;">{{species_detail. designation}}</div><br/>
+                <B>Average Height:</B> <div style="display: inline;margin: 25px;">{{species_detail.average_height}}</div><br/>
+                <B>Average Lifespan:</B><div style="display: inline; margin: 25px;">{{species_detail.average_lifespan}}</div><br/>
+                <B>Eye Colors:</B><div style="display: inline; margin: 25px;">{{species_detail.eye_colors}}</div><br/>
+                <B>Hair Colors:</B><div style="display: inline; margin: 25px;" >{{species_detail.hair_colors}}</div><br/>
+                <B>Skin Colors:</B><div style="display: inline; margin: 25px;">{{species_detail.skin_colors}}</div><br/>
+                <B>Language:</B><div style="display: inline; margin: 25px;">{{species_detail.language}}</div><br/>
+                <B>HomeWorld:</B><div style="display: inline; margin: 25px;">{{species_detail.homeworld}}</div><br/>
+              </mat-card-content>
+              <mat-card-actions>
+                 <button type="button" color="accent" mat-mini-fab (click)="goBack()"> <mat-icon>keyboard_arrow_left</mat-icon></button>
+                  <div fxFlex></div>
+                 <button type="button" color="accent" mat-mini-fab (click)="goBack()"> <mat-icon>favorite</mat-icon></button>
+              </mat-card-actions>
+            </mat-card>
+        </div>
+      </div> 

@@ -1,0 +1,35 @@
+  <div>
+      <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+          <li [ngClass]="page-item">
+              <a (click)="setPage(1, false)">First</a> 
+          </li>
+          <li >
+              <a  (click)="setPage(pager.currentPage - 1, false)"><<</a>
+          </li>
+          <li *ngFor="let page of pager.pages" >
+              <a  (click)="setPage(page, false)" [class.selected]="page==currentpage">{{page}}</a>
+          </li>
+          <li >
+          <a  (click)="setPage(pager.currentPage + 1, false)">>></a>
+          </li>
+          <li >
+          <a (click)="setPage(pager.totalPages, false)">Last</a>
+          </li>
+      </ul>
+  </div>
+
+  <h3>{{chosencategory}}</h3>
+  <div fxflexfill style="height:100%; margin : 0px; min-height:100%; min-width: 100%; width:100%">
+    <div fxflexfill fxlayoutgap="10px grid" style=" height: 100%; margin: 0px -10px -10px 0px; min-height: 100%; min-width: 100%; width: 100%; flex-flow: row wrap; box-sizing: border-box; display: flex;" >
+        <div *ngFor="let c of categoryname" fxflex="25" style="margin-right: 0px; flex: 1 1 25%; box-sizing: border-box; padding: 0px 10px 10px 0px; max-width: 25%;"> 
+           <div fxflexfill="" fxlayoutalign="center center" style="height: 100%; margin: 0px; min-height: 100%; min-width: 100%; width: 100%; place-content: center; align-items: center; flex-direction: row; box-sizing: border-box; display: flex;">
+            <mat-card class="category-picture"  (click)="itemdetails(c)" routerLink="/{{chosencategory}}/{{c.category}}/{{c.id}}">
+                <mat-card-title>
+                    <span style="font-size:20px">  {{c.name}}</span>
+                </mat-card-title>
+                <img mat-card-image src="../assets/images/{{c.category}}/{{c.id}}.jpg" onerror="this.src='../assets/images/404.jpg'"> 
+              </mat-card>
+           </div> 
+        </div> 
+    </div>
+  </div>
